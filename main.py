@@ -60,6 +60,3 @@ def openapi_spec():
     text = f.read()
     text = text.replace("PLUGIN_HOSTNAME", f"https://{host}")
     return Response(text, mimetype="text/yaml")
-
-
-app.run(host='0.0.0.0', port=5000)

@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  domain_tools_gpt_plugin:
+    build: .
+    image: domain_tools_gpt_plugin
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - 8080:8080
+    command: gunicorn -b 0.0.0.0:8080 "main:app" --reload --log-level debug
